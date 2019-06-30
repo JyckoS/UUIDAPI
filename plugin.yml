@@ -1,0 +1,8 @@
+name: UUIDAPI
+author: Gober
+description: Get UUID from Name and vise versa.
+main: com.jyckos.uuidapi.UUIDAPI
+version: 1.0.0
+commands:
+  uuidapi:
+    usage: /<command>
