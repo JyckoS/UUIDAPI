@@ -1,5 +1,6 @@
 package com.jyckos.uuidapi;
 
+
 import java.util.UUID;
 
 import org.bukkit.plugin.java.JavaPlugin;

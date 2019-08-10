@@ -2,6 +2,7 @@ package com.jyckos.uuidapi;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -13,8 +14,8 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class UUIDStorage {
 	private UUIDAPI m;
-	private HashMap<String, UUID> uuids = new HashMap<String, UUID>();
-	private HashMap<String, String> names = new HashMap<String, String>();
+	private HashMap<String, UUID> uuids = new HashMap<String, UUID>(); // String to UUID
+	private HashMap<String, String> names = new HashMap<String, String>(); // UUID (String) to Name
                    // UUID, String
 	public UUIDStorage(UUIDAPI m) {
 		this.m = m;
@@ -29,6 +30,18 @@ public class UUIDStorage {
 				saveUUID();
 			}
 		}.runTaskTimerAsynchronously(this.m, 7200L, 7200L);
+	}
+	public Collection<UUID> getAllUUID() {
+		return this.uuids.values();
+	}
+	public Collection<String> getAllNames() {
+		return this.uuids.keySet();
+	}
+	public HashMap<String, UUID> getUUIDMap() {
+		return this.uuids;
+	}
+	public HashMap<String, String> getStringUUIDMap() {
+		return this.names;
 	}
 	public UUID getUUID(String name) {
 		return uuids.get(name.toLowerCase());
